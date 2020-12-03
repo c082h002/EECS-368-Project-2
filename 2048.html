@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>2048</title>
+    <style>
+      .title{
+			        text-align:center;
+            }
+            p
+            {
+              text-align: center;
+              color: rgb(216, 192, 125);
+            }
+            h2
+            {
+              font : georgia;
+              text-align: center;
+              color: rgb(216, 192, 125);
+            }
+            #Canvas
+            {
+                margin-left: -250px;
+                padding-left: 50%;
+
+            }
+
+            #canvas
+            {
+                background-color: rgb(221, 215, 168);
+            }
+            .restart
+            {
+              padding: 5px  10px;
+              background-color:  rgb(218, 155, 74);
+              border-radius: 10%;
+              cursor: pointer;
+              
+            }
+    </style>
+  </head>
+  <body>
+    <h2>2048</h2>
+    <p id="Score">Score:<p>
+      <div id="Canvas">
+        <canvas id="canvas" width="500" height="500"></canvas>
+      </div>
+      <center><a class = "restart" onclick="rst()">Start New Game</a></center>
+  </body>
+  <script>
+    function draw(board) {
+  numebr.beginPath();
+  numebr.rect(board.x, board.y, width, width);
+  switch (board.value){
+    case 0 : numebr.fillStyle = '#ffffff';
+      break;
+    case 2 : numebr.fillStyle = '#F5E2C2';
+      break;
+    case 4 : numebr.fillStyle = '#F5D397';
+      break;
+    case 8 : numebr.fillStyle = '#F2C472';
+      break;
+    case 16 : numebr.fillStyle = '#F2B957';
+     break;
+    case 32 : numebr.fillStyle = '#F0B143';
+      break;
+    case 64 : numebr.fillStyle = '#EFA82E';
+      break;
+    case 128 : numebr.fillStyle = '#EF9A08';
+      break;
+    case 256 : numebr.fillStyle = '#CC8409';
+      break;
+    case 512 : numebr.fillStyle = '#A8700D';
+      break;
+    case 1024 : numebr.fillStyle = '#885B0C';
+      break;
+    case 2048 : numebr.fillStyle = '#61430D';
+      break;
+    case 4096 : numebr.fillStyle = '#3F2C0B';
+      break;
+    default : numebr.fillStyle = '#000111';
+  }
+  numebr.fill();
+  if (board.value != 0) {
+    numebr.font = '45px georgia';
+    numebr.textAlign = "center";
+    numebr.fillStyle = "white";
+    numebr.fillText(board.value, board.x + width/2 , board.y + width/2 +10);
+  }
+}
+  </script>
+  <script src="2048.js"> </script>
+  
+</html>
